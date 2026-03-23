@@ -1,0 +1,29 @@
+{
+  "name": "smart-presence",
+  "version": "1.0.0",
+  "description": "Discord message monitoring for OpenClaw using DiscordBrowser",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "openclaw",
+    "discord",
+    "discordbrowser",
+    "monitoring",
+    "webhook"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "peerDependencies": {
+    "openclaw": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  }
+}

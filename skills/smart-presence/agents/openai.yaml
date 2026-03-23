@@ -1,0 +1,4 @@
+interface:
+  display_name: "Smart Presence"
+  short_description: "Discord context forwarding skill"
+  default_prompt: "Use $smart-presence to monitor Discord via DiscordBrowser and forward message context to OpenClaw webhooks."
