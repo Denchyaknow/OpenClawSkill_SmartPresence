@@ -1,0 +1,65 @@
+{
+  "$schema": "smart-presence-skill-v1",
+  "enabled": true,
+  "version": "1.0.0",
+  "skill": {
+    "name": "smart-presence",
+    "description": "Forward Discord messages to OpenClaw using DiscordBrowser's Discrawl",
+    "auto_start": true,
+    "die_with_openclaw": true
+  },
+  "dependencies": {
+    "discordbrowser": {
+      "required": true,
+      "path": "skills/DiscordBrowser",
+      "discrawl_executable": "skills/DiscordBrowser/Crawlie/discrawl.exe",
+      "install_command": "npx clawhub install https://github.com/Denchyaknow/OpenClawSkill_DiscordBrowser"
+    }
+  },
+  "buffer": {
+    "max_messages_per_channel": 20,
+    "expiration_minutes": 5,
+    "context_messages_to_send": 10,
+    "deduplication_window": 1000
+  },
+  "filtering": {
+    "ignore_bot_messages": true,
+    "min_message_length": 2,
+    "ignore_users": [],
+    "ignore_channels": []
+  },
+  "rate_limits": {
+    "min_interval_seconds": 30,
+    "max_daily_triggers": 100,
+    "per_channel_min_interval": 30
+  },
+  "webhook": {
+    "enabled": true,
+    "url": "http://127.0.0.1:18789/hooks/wake",
+    "token": "smart-presence-token",
+    "mode": "now",
+    "include_full_context": true,
+    "retry_attempts": 3,
+    "timeout_ms": 10000
+  },
+  "guilds": [
+    {
+      "guild_id": "794700691490078740",
+      "enabled": true,
+      "channels": {
+        "whitelist": [
+          "818828164251516958"
+        ],
+        "blacklist": [],
+        "scan_all_if_empty": true
+      }
+    }
+  ],
+  "logging": {
+    "level": "info",
+    "file": "smart-presence.log",
+    "max_size_mb": 10,
+    "max_files": 5,
+    "console": true
+  }
+}
